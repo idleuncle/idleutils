@@ -24,6 +24,7 @@ requirements:
 	@sed -i -e "/${PACKAGENAME}/d" requirements.txt
 
 	@sed -ie '/^REQUIRED = \[/,/^\]$$/d' setup.py
+	@#sed -in '3'd setup.py
 
 	@sed -n '1,3'p setup.py > setup.py.tmp
 
@@ -31,11 +32,11 @@ requirements:
 	@cat requirements.txt | sed -e "/${PACKAGENAME}/d" | sed -e "s/^/\'/" | sed -e "s/$$/\', /" >> setup.py.tmp
 	@echo ']' >> setup.py.tmp
 
-	@sed -n '3,$$'p setup.py >> setup.py.tmp
+	@sed -n '4,$$'p setup.py >> setup.py.tmp
 
 	@mv setup.py.tmp setup.py
 
 	@echo "Make requirements done."
 
 clean:
-	rm -fr `find . -name "__pycache__"` `find . -name "*.pyc"` setup.pye build dist *.egg-info
+	rm -fr `find . -name "__pycache__"` `find . -name "*.pyc"` setup.pye setup.pyn build dist *.egg-info

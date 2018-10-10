@@ -4,17 +4,11 @@
 REQUIRED = [
 'argparse', 
 'chardet', 
-'lambdautils', 
 'lxml', 
 'pyquery', 
 'requests', 
 'six', 
 ]
-
-
-
-
-
 # Note: To use the 'upload' functionality of this file, you must:
 #   $ pip install twine
 
@@ -35,7 +29,6 @@ REQUIRES_PYTHON = '>=3.5.0'
 VERSION = None
 
 # What packages are required for this module to be executed?
-
 
 # What packages are optional?
 EXTRAS = {
